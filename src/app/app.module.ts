@@ -50,12 +50,23 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatTreeModule } from "@angular/material/tree";
 import { OverlayModule } from "@angular/cdk/overlay";
+import { SuperHttpComponent } from "./super-http/super-http.component";
+import { HttpClientModule } from "@angular/common/http";
+import { PostService } from "./services/post.service";
+import { PdfMakerComponent } from './pdf-maker/pdf-maker.component';
 
 @NgModule({
-  declarations: [AppComponent, BasicComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    BasicComponent,
+    HomeComponent,
+    SuperHttpComponent,
+    PdfMakerComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     A11yModule,
@@ -103,7 +114,7 @@ import { OverlayModule } from "@angular/cdk/overlay";
     PortalModule,
     ScrollingModule,
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

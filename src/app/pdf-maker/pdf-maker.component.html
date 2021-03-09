@@ -1,0 +1,17 @@
+<div id="pdfTable" #pdfTable>
+  <div class="row">
+    <div class="col-3">
+      <img src="{{imgurl}}" style="width:300px" alt="">
+
+    </div>
+    <div class="col-3">
+      <img [src]="imgurl" style="width:300px" alt="">
+    </div>
+    <div class="col-3">
+      <img [src]="imgurl" style="width:300px" alt="">
+
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="downloadAsPDF()">Export To PDF</button>
