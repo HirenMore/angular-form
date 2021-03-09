@@ -7,6 +7,7 @@ import {
   Validators,
 } from "@angular/forms";
 import * as Joi from "joi";
+import { SuperHero } from "../class/super-hero";
 @Component({
   selector: "app-basic",
   templateUrl: "./basic.component.html",
@@ -14,11 +15,12 @@ import * as Joi from "joi";
 })
 export class BasicComponent {
   j = JSON;
+  superHero: SuperHero = new SuperHero();
   name;
   superPowers;
   submitted = false;
   superHeroForm = this.fb.group({
-    name: ["", Validators.required],
+    name: ["", [Validators.required, Validators.minLength(4)]],
     place: [""],
     superPowers: ["", Validators.required],
   });
